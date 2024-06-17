@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-"useClient()"
 
 const Banner = () => {
   return (
@@ -14,7 +13,7 @@ const Banner = () => {
       <div className="absolute top-1/2 w-full text-center font-bold">
         <p>Sure where to go? Perfect</p>
         <button className="text-purple-400 bg-white px-6 py-3 rounded-full shadow-md my-3 font-bold hover:shadow-xl active:scale-90 transition duration-200">
-          I'm Flexible
+          I&apos;m Flexible
         </button>
       </div>
     </div>
