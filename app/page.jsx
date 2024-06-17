@@ -2,6 +2,7 @@
 
 import Banner from "@/components/Banner";
 import Header from "@/components/Header";
+import Image from "next/image";
 
 const exploreData = [
   {
@@ -62,10 +63,14 @@ export default function Home() {
               key={index}
               className="bg-white rounded-lg overflow-hidden shadow-md"
             >
-              <img
+              <Image
                 src={item.img}
                 alt={item.location}
                 className="w-full h-64 object-cover"
+                objectFit="contain"
+                width={500}
+                height={500}
+                objectPosition="left"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold">{item.location}</h3>
