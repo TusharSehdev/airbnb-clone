@@ -60,7 +60,7 @@ const MediumCard = () => {
     let scrollAmount = 0;
     const scrollInterval = setInterval(() => {
       if (scrollContainer) {
-        scrollContainer.scrollLeft += 1; // Adjust this value to control scroll speed
+        scrollContainer.scrollLeft += 5; // Adjust this value to control scroll speed
         scrollAmount += 1;
         if (
           scrollAmount >=
