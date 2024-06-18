@@ -48,14 +48,16 @@ const Banner = () => {
           </div>
         ))}
       </Slider>
-      <div className="">
-        <div className="absolute top-1/2 left-[625px] text-center font-bold transform -translate-y-1/2 p-6 rounded-xl bg-black/50 text-white">
-          <p>Sure where to go? Perfect</p>
-          <button className="text-white bg-red-400 px-6 py-3 rounded-full shadow-md my-3 font-bold hover:shadow-xl active:scale-90 transition duration-200">
-            I&apos;m Flexible
-          </button>
+      <center>
+        <div className=" hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 ">
+          <div className=" text-center font-bold transform -translate-y-1/2 p-6 rounded-xl bg-black/50 text-white">
+            <p>Sure where to go? Perfect</p>
+            <button className="text-white bg-red-400 px-6 py-3 rounded-full shadow-md my-3 font-bold hover:shadow-xl active:scale-90 transition duration-200">
+              I&apos;m Flexible
+            </button>
+          </div>
         </div>
-      </div>
+      </center>
     </div>
   );
 };

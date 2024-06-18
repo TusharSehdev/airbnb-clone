@@ -49,7 +49,7 @@ const Header = () => {
       </div>
       {/* Middle  */}
       <div>
-        <div className="flex justify-center items-center border-2 h-8 rounded-full p-2 mt-1">
+        <div className="hidden lg:flex flex justify-center items-center border-2 h-8 rounded-full p-2 mt-1">
           <input
             value={searchInput}
             onChange={(event) => setSeachInput(event.target.value)}
