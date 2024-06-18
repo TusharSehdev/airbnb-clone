@@ -32,7 +32,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="relative w-full overflow-hidden h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px]">
+    <div className="relative w-full overflow-hidden h-full sm:h-[400px] lg:h-[500px] xl:h-[600px]">
       <Slider {...settings}>
         {images.map((image, index) => (
           <div
@@ -48,11 +48,13 @@ const Banner = () => {
           </div>
         ))}
       </Slider>
-      <div className="absolute top-1/2 w-full text-center font-bold transform -translate-y-1/2">
-        <p>Sure where to go? Perfect</p>
-        <button className="text-purple-400 bg-white px-6 py-3 rounded-full shadow-md my-3 font-bold hover:shadow-xl active:scale-90 transition duration-200">
-          I&apos;m Flexible
-        </button>
+      <div className="">
+        <div className="absolute top-1/2 left-[625px] text-center font-bold transform -translate-y-1/2 p-6 rounded-xl bg-black/50 text-white">
+          <p>Sure where to go? Perfect</p>
+          <button className="text-white bg-red-400 px-6 py-3 rounded-full shadow-md my-3 font-bold hover:shadow-xl active:scale-90 transition duration-200">
+            I&apos;m Flexible
+          </button>
+        </div>
       </div>
     </div>
   );
