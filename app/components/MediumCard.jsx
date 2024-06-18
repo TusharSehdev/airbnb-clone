@@ -57,11 +57,17 @@ const MediumCard = () => {
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    const cardWidth =
+      scrollContainer.querySelector("div > div").offsetWidth + 12; // card width + margin (space-x-3 -> 12px)
     let scrollAmount = 0;
+
     const scrollInterval = setInterval(() => {
       if (scrollContainer) {
-        scrollContainer.scrollLeft += 5; // Adjust this value to control scroll speed
-        scrollAmount += 1;
+        scrollContainer.scrollLeft += cardWidth;
+        scrollAmount += cardWidth;
+
         if (
           scrollAmount >=
           scrollContainer.scrollWidth - scrollContainer.clientWidth
@@ -70,7 +76,7 @@ const MediumCard = () => {
           scrollContainer.scrollLeft = 0;
         }
       }
-    }, 10); // Adjust this value to control scroll interval
+    }, 2000); // Adjust this value to control scroll interval
 
     return () => clearInterval(scrollInterval);
   }, []);
