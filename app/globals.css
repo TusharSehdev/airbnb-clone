@@ -29,5 +29,19 @@
     /* -webkit-background-clip: text; */
     transform: translateX(-0.02em);
   }
-  
+  /* Sleek and minimalistic scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px; /* Adjust width for minimalistic look */
+  height: 8px; /* Adjust height for minimalistic look (for horizontal scrollbar) */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #b0b0b0; /* Customize this color for a sleek look */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Customize track color */
+}
+
 
