@@ -15,7 +15,7 @@ const Banner = () => {
     autoplaySpeed: 3000,
     arrows: false, // Remove arrows if you don't need them
   };
-
+  
   const images = [
     {
       src: "https://links.papareact.com/0fm",

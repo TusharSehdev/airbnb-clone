@@ -1,4 +1,4 @@
-"useClient()";
+"use client";
 
 import Image from "next/image";
 import React, { useState } from "react";
@@ -10,9 +10,12 @@ import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
 import { BsFillPeopleFill } from "react-icons/bs";
+// import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Header = () => {
-  const [searchInput, setSeachInput] = useState("");
+  // const router = useRouter();
+  const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [noOfGuests, setNoOfGuests] = useState(1);
@@ -23,11 +26,13 @@ const Header = () => {
   };
 
   const handleGuest = (event) => {
-    setNoOfGuests(event.target.value);
-    if (noOfGuests < 1) {
-      setNoOfGuests(1);
-    }
+    const guests = Math.max(1, event.target.value); // Ensure at least 1 guest
+    setNoOfGuests(guests);
   };
+
+  // const handleSearch = () => {
+  //   router.push("/search");
+  // };
 
   const selectionRange = {
     startDate: startDate,
@@ -37,22 +42,24 @@ const Header = () => {
 
   return (
     <div className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md py-5 px-5">
-      {/* Top  */}
+      {/* Top */}
       <div className="relative items-center h-10 cursor-pointer my-auto">
-        <Image
-          src="https://links.papareact.com/qd3"
-          objectFit="contain"
-          layout="fill"
-          objectPosition="left"
-          alt="/"
-        />
+        <a href="/">
+          <Image
+            src="https://links.papareact.com/qd3"
+            objectFit="contain"
+            layout="fill"
+            objectPosition="left"
+            alt="Logo"
+          />
+        </a>
       </div>
-      {/* Middle  */}
+      {/* Middle */}
       <div>
         <div className="hidden lg:flex flex justify-center items-center border-2 h-8 rounded-full p-2 mt-1">
           <input
             value={searchInput}
-            onChange={(event) => setSeachInput(event.target.value)}
+            onChange={(event) => setSearchInput(event.target.value)}
             placeholder="Enter the city"
             className="w-full focus:outline-none text-black"
           />
@@ -61,14 +68,14 @@ const Header = () => {
           </button>
         </div>
       </div>
-      {/* End  */}
+      {/* End */}
       <div className="flex items-center justify-end">
         <div className="flex items-center space-x-2 justify-end px-5">
           <p className="text-gray-500 hidden md:inline-flex"> Become a host</p>
           <IoEarth className="text-gray-500 text-xl" />
         </div>
 
-        <button className="border-2 text-xl px-3 flex h-10 items-center rounded-xl text-gray-500  bg-white rounded-full shadow-md  font-bold hover:shadow-xl active:scale-90 transition duration-200">
+        <button className="border-2 text-xl px-3 flex h-10 items-center rounded-xl text-gray-500 bg-white rounded-full shadow-md font-bold hover:shadow-xl active:scale-90 transition duration-200">
           <CgProfile className="mr-2" />
           <RxHamburgerMenu />
         </button>
@@ -77,7 +84,6 @@ const Header = () => {
         {searchInput && (
           <div>
             <DateRangePicker
-              className="flex item-center justify-center"
               ranges={[selectionRange]}
               minDate={new Date()}
               rangeColors={["#FD5B61"]}
@@ -94,6 +100,16 @@ const Header = () => {
                 onChange={handleGuest}
                 className="w-12 pl-2 text-lg outline-none text-red-400"
               />
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <button className="p-2 border-red-400 border rounded-full">
+                Cancel
+              </button>
+              <a href="/about">
+                <button className="p-2 bg-red-400 rounded-full text-white">
+                  Search
+                </button>
+              </a>
             </div>
           </div>
         )}

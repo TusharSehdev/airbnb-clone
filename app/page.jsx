@@ -10,16 +10,13 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <Header />
       <Banner />
       <main className="mx-auto max-w-7xl px-8 sm:px-16">
         <SmallCard />
         <MediumCard />
         <BigCard />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+        
     </>
   );
 }
